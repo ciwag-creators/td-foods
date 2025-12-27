@@ -209,17 +209,14 @@ const styles = {
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
   },
 
   overlay: {
     backgroundColor: "rgba(255,255,255,0.9)",
     maxWidth: 500,
-    width: "100%",
     padding: 20,
     borderRadius: 10,
+    margin: "40px auto",
   },
 
   title: { fontSize: "2rem", fontWeight: "bold" },
@@ -231,6 +228,63 @@ const styles = {
     border: "none",
     fontSize: "1rem",
     cursor: "pointer",
-    width: "100%",
   },
 };
+
+export default function Home() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const [loading, setLoading] = useState(false);
+
+  const pricePerKg = 2000;
+
+  /* ---- your Paystack + Supabase logic stays unchanged ---- */
+
+  return (
+    <div style={styles.container}>
+      <div style={styles.overlay}>
+        <h1 style={styles.title}>TD FOODS STORE 🦐</h1>
+        <p>₦{pricePerKg} per kg</p>
+
+        <input
+          style={styles.input}
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <input
+          style={styles.input}
+          placeholder="Phone"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
+
+        <input
+          style={styles.input}
+          placeholder="Address"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+        />
+
+        <input
+          style={styles.input}
+          type="number"
+          min="1"
+          value={quantity}
+          onChange={(e) => setQuantity(Number(e.target.value))}
+        />
+
+        <button
+          style={styles.button}
+          onClick={payWithPaystack}
+          disabled={loading}
+        >
+          {loading ? "Processing..." : "Pay Now"}
+        </button>
+      </div>
+    </div>
+  );
+}
