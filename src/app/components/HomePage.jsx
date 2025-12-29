@@ -79,7 +79,7 @@ const styles = {
 
  hero: {
   display: "flex",
-  gap: 40,
+  gap: 60,
   alignItems: "center",
   justifyContent: "space-between",
   padding: "60px 20px",
@@ -107,8 +107,8 @@ subtitle: {
 
 
   heroImage: {
-    borderRadius: 14,
-    marginTop: 20,
+    borderRadius: 20,
+    marginTop: 26,
   },
 
   cta: {
