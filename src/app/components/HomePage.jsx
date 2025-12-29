@@ -77,29 +77,34 @@ const styles = {
     color: "#222",
   },
 
-  hero: {
-    display: "flex",
-    flexWrap: "wrap",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "60px 20px",
-    maxWidth: 1100,
-    margin: "0 auto",
-  },
+ hero: {
+  display: "flex",
+  gap: 40,
+  alignItems: "center",
+  justifyContent: "space-between",
+  padding: "60px 20px",
+  maxWidth: 1100,
+  margin: "0 auto",
+  flexWrap: "wrap",
+},
 
-  heroText: {
-    maxWidth: 500,
-  },
 
-  title: {
-    fontSize: "2.8rem",
-    marginBottom: 10,
-  },
+ heroText: {
+  maxWidth: 500,
+},
 
-  subtitle: {
-    fontSize: "1.2rem",
-    marginBottom: 20,
-  },
+title: {
+  fontSize: "3rem",
+  marginBottom: 10,
+  lineHeight: 1.2,
+},
+
+subtitle: {
+  fontSize: "1.15rem",
+  marginBottom: 24,
+  color: "#555",
+},
+
 
   heroImage: {
     borderRadius: 14,
@@ -163,16 +168,19 @@ const styles = {
     cursor: "pointer",
   },
 
-  imageRow: {
+imageRow: {
   display: "flex",
   gap: 20,
-  alignItems: "center",
-  marginTop: 20,
+  flexWrap: "wrap",
+  justifyContent: "center",
 },
 
 heroImage: {
-  borderRadius: 14,
+  borderRadius: 16,
   objectFit: "cover",
+  width: 300,
+  height: 220,
 },
+
 
 };
