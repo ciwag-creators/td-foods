@@ -27,6 +27,14 @@ export default function HomePage() {
           style={styles.heroImage}
           priority
         />
+        <Image
+          src="/images/crayfish-bg.jpg"
+          alt="Packaged crayfish"
+          width={1000}
+          height={450}
+          style={styles.fullImage}
+        />
+
       </section>
 
       {/* INFO SECTION */}
@@ -41,16 +49,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* IMAGE BREAK */}
-      <section style={styles.imageBreak}>
-        <Image
-          src="/images/crayfish-bg.jpg"
-          alt="Packaged crayfish"
-          width={1000}
-          height={450}
-          style={styles.fullImage}
-        />
-      </section>
 
       {/* FINAL CTA */}
       <section style={styles.final}>
