@@ -19,21 +19,25 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <Image
-          src="/images/crayfish.jpg"
-          alt="Premium crayfish"
-          width={420}
-          height={320}
-          style={styles.heroImage}
-          priority
-        />
-        <Image
-          src="/images/crayfish-bg.jpg"
-          alt="Packaged crayfish"
-          width={420}
-          height={320}
-          style={styles.fullImage}
-        />
+       <div style={styles.imageRow}>
+  <Image
+    src="/images/crayfish.jpg"
+    alt="Premium crayfish"
+    width={320}
+    height={240}
+    style={styles.heroImage}
+    priority
+  />
+
+  <Image
+    src="/images/crayfish-bg.jpg"
+    alt="Packaged crayfish"
+    width={320}
+    height={240}
+    style={styles.heroImage}
+  />
+</div>
+
 
       </section>
 
@@ -155,4 +159,17 @@ const styles = {
     borderRadius: 6,
     cursor: "pointer",
   },
+
+  imageRow: {
+  display: "flex",
+  gap: 20,
+  alignItems: "center",
+  marginTop: 20,
+},
+
+heroImage: {
+  borderRadius: 14,
+  objectFit: "cover",
+},
+
 };
