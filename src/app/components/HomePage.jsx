@@ -9,9 +9,12 @@ export default function HomePage() {
       {/* HERO SECTION */}
       <section style={styles.hero}>
         <div style={styles.heroText}>
-          <h1 style={styles.title}>Premium Dry Crayfish 🦐</h1>
+          <h1 style={styles.title}>TD-Foods Dry Crayfish 🦐</h1>
           <p style={styles.subtitle}>
-            Fresh • Clean • Hygienically Packaged
+            Premium Quality • Ready to Eat • Deliciously Clean
+          </p>
+          <p style={styles.subtitle}>
+           Our product is  Fresh, clean and hygienically Packaged
           </p>
 
           <Link href="/order">
