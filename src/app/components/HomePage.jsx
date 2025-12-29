@@ -30,8 +30,8 @@ export default function HomePage() {
         <Image
           src="/images/crayfish-bg.jpg"
           alt="Packaged crayfish"
-          width={1000}
-          height={450}
+          width={420}
+          height={320}
           style={styles.fullImage}
         />
 
