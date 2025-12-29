@@ -26,8 +26,8 @@ export default function HomePage() {
   <Image
     src="/images/crayfish.jpg"
     alt="Premium crayfish"
-    width={320}
-    height={240}
+    width={400}
+    height={320}
     style={styles.heroImage}
     priority
   />
@@ -35,8 +35,8 @@ export default function HomePage() {
   <Image
     src="/images/crayfish-bg.jpg"
     alt="Packaged crayfish"
-    width={320}
-    height={240}
+    width={400}
+    height={320}
     style={styles.heroImage}
   />
 </div>
