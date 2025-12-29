@@ -1,136 +1,160 @@
+"use client";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <div style={styles.container}>
-      <div style={styles.overlay}>
-        {/* HERO */}
-        <h1 style={styles.heroTitle}>
-          Fresh, Clean & Premium Crayfish 🦐
-        </h1>
+    <main style={styles.wrapper}>
+      
+      {/* HERO SECTION */}
+      <section style={styles.hero}>
+        <div style={styles.heroText}>
+          <h1 style={styles.title}>Premium Dry Crayfish 🦐</h1>
+          <p style={styles.subtitle}>
+            Fresh • Clean • Hygienically Packaged
+          </p>
 
-        <p style={styles.heroText}>
-          At <strong>TD Foods</strong>, we supply high-quality, hygienically
-          processed crayfish sourced from trusted coastal suppliers.
-        </p>
-
-        <p style={styles.price}>₦2,000 per kg</p>
-
-        {/* PRODUCT IMAGE */}
-        <img
-          src="/images/Crayfish.jpg"
-          alt="Premium dried crayfish"
-          style={styles.productImage}
-        />
-
-        {/* FEATURES */}
-        <div style={styles.features}>
-          <p>✔ Premium Grade Crayfish</p>
-          <p>✔ Hygienically Processed</p>
-          <p>✔ Affordable Pricing</p>
-          <p>✔ Fast & Reliable Delivery</p>
-          <p>✔ Secure Paystack Payment</p>
+          <Link href="/order">
+            <button style={styles.cta}>Order Now</button>
+          </Link>
         </div>
 
-        {/* HOW IT WORKS */}
-        <h2 style={styles.subTitle}>How It Works</h2>
-        <ol style={styles.steps}>
-          <li>Fill in your order details</li>
-          <li>Pay securely online</li>
-          <li>Receive WhatsApp confirmation</li>
-          <li>We arrange delivery immediately</li>
-        </ol>
+        <Image
+          src="/images/Crayfish.jpg"
+          alt="Premium crayfish"
+          width={420}
+          height={320}
+          style={styles.heroImage}
+          priority
+        />
+      </section>
 
-        {/* CTA */}
+      {/* INFO SECTION */}
+      <section style={styles.info}>
+        <h2>Why Choose TD Foods?</h2>
+
+        <div style={styles.features}>
+          <div style={styles.card}>✔ 100% Clean & Dry</div>
+          <div style={styles.card}>✔ No Sand, No Odor</div>
+          <div style={styles.card}>✔ Trusted by Homes & Restaurants</div>
+          <div style={styles.card}>✔ Nationwide Delivery</div>
+        </div>
+      </section>
+
+      {/* IMAGE BREAK */}
+      <section style={styles.imageBreak}>
+        <Image
+          src="/images/crayfish-bg.jpg"
+          alt="Packaged crayfish"
+          width={1000}
+          height={450}
+          style={styles.fullImage}
+        />
+      </section>
+
+      {/* FINAL CTA */}
+      <section style={styles.final}>
+        <h2>Ready to Place an Order?</h2>
+        <p>Fast payment • Instant confirmation • WhatsApp receipt</p>
+
         <Link href="/order">
-          <button style={styles.ctaButton}>
-            Order Now 🦐
-          </button>
+          <button style={styles.ctaAlt}>Proceed to Order</button>
         </Link>
+      </section>
 
-        <p style={styles.footer}>
-          TD Foods — Trusted Supplier of Quality Crayfish
-        </p>
-      </div>
-    </div>
+    </main>
   );
 }
 
 const styles = {
-  container: {
-    minHeight: "100vh",
-    backgroundImage: "url('/images/crayfish-bg.jpg')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    padding: 20,
+  wrapper: {
+    fontFamily: "Arial, sans-serif",
+    color: "#222",
   },
 
-  overlay: {
-    backgroundColor: "rgba(255,255,255,0.93)",
-    maxWidth: 650,
-    margin: "40px auto",
-    padding: 30,
-    borderRadius: 12,
-    textAlign: "center",
-    fontFamily: "Arial",
-  },
-
-  heroTitle: {
-    fontSize: "2.2rem",
-    fontWeight: "bold",
+  hero: {
+    display: "flex",
+    flexWrap: "wrap",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: "60px 20px",
+    maxWidth: 1100,
+    margin: "0 auto",
   },
 
   heroText: {
-    marginTop: 10,
-    fontSize: "1.1rem",
+    maxWidth: 500,
   },
 
-  price: {
-    marginTop: 15,
-    fontSize: "1.4rem",
-    fontWeight: "bold",
-    color: "#0aa",
+  title: {
+    fontSize: "2.8rem",
+    marginBottom: 10,
   },
 
-  productImage: {
-    width: "100%",
-    maxHeight: 300,
-    objectFit: "cover",
-    borderRadius: 10,
+  subtitle: {
+    fontSize: "1.2rem",
+    marginBottom: 20,
+  },
+
+  heroImage: {
+    borderRadius: 14,
     marginTop: 20,
   },
 
-  features: {
-    textAlign: "left",
-    marginTop: 25,
+  cta: {
+    padding: "14px 28px",
     fontSize: "1rem",
-  },
-
-  subTitle: {
-    marginTop: 30,
-    fontSize: "1.5rem",
-  },
-
-  steps: {
-    textAlign: "left",
-    marginTop: 10,
-  },
-
-  ctaButton: {
-    marginTop: 25,
-    padding: 15,
-    width: "100%",
     backgroundColor: "#0aa",
     color: "#fff",
-    fontSize: "1.1rem",
     border: "none",
-    borderRadius: 8,
+    borderRadius: 6,
     cursor: "pointer",
   },
 
-  footer: {
-    marginTop: 30,
-    fontSize: "0.9rem",
-    color: "#555",
+  info: {
+    background: "#f7f7f7",
+    padding: "60px 20px",
+    textAlign: "center",
+  },
+
+  features: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+    gap: 16,
+    maxWidth: 900,
+    margin: "30px auto 0",
+  },
+
+  card: {
+    background: "#fff",
+    padding: 20,
+    borderRadius: 8,
+    fontWeight: "bold",
+  },
+
+  imageBreak: {
+    maxWidth: 1100,
+    margin: "60px auto",
+    padding: "0 20px",
+  },
+
+  fullImage: {
+    width: "100%",
+    borderRadius: 12,
+  },
+
+  final: {
+    textAlign: "center",
+    padding: "60px 20px",
+  },
+
+  ctaAlt: {
+    padding: "14px 30px",
+    fontSize: "1rem",
+    backgroundColor: "#008080",
+    color: "#fff",
+    border: "none",
+    borderRadius: 6,
+    cursor: "pointer",
   },
 };
