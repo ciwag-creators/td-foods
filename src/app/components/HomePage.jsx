@@ -20,7 +20,7 @@ export default function HomePage() {
         </div>
 
         <Image
-          src="/images/Crayfish.jpg"
+          src="/images/crayfish.jpg"
           alt="Premium crayfish"
           width={420}
           height={320}
