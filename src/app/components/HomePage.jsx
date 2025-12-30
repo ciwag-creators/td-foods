@@ -31,7 +31,7 @@ Please share price and delivery details.`;
             </Link>
 
             <a
-              href={`https://wa.me/2347066922332?text=${encodeURIComponent(
+              href={`https://wa.me/2348105121657?text=${encodeURIComponent(
                 whatsappMessage
               )}`}
               target="_blank"
@@ -80,7 +80,7 @@ Please share price and delivery details.`;
         <div style={styles.pricingGrid}>
           <div style={styles.pricingCard}>
             <h3>💰 Price</h3>
-            <p>₦2,000 per kg</p>
+            <p>₦3,500 per kg</p>
             <p>Bulk discounts available</p>
           </div>
 
@@ -106,7 +106,7 @@ Please share price and delivery details.`;
 
       {/* FLOATING WHATSAPP */}
       <a
-        href={`https://wa.me/2347066922332?text=${encodeURIComponent(
+        href={`https://wa.me/2348105121657?text=${encodeURIComponent(
           whatsappMessage
         )}`}
         target="_blank"
