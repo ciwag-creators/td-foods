@@ -129,6 +129,41 @@ Thank you.`;
           <div style={styles.card}>✔ Nationwide Delivery</div>
         </div>
       </section>
+<section style={styles.pricing}>
+  <h2>Pricing & Supply Capacity</h2>
+
+  <p style={styles.pricingText}>
+    We supply <strong>premium dry crayfish</strong> suitable for homes,
+    restaurants, caterers, and bulk buyers.
+  </p>
+
+  <div style={styles.pricingGrid}>
+    <div style={styles.pricingCard}>
+      <h3>💰 Price Range</h3>
+      <p>₦3,500 per kg (retail)</p>
+      <p>Discounts available for bulk orders</p>
+    </div>
+
+    <div style={styles.pricingCard}>
+      <h3>📦 Supply Capacity</h3>
+      <p>Minimum order: 1 kg</p>
+      <p>Maximum supply: 500 kg+</p>
+      <p>Daily & bulk supply available</p>
+    </div>
+
+    <div style={styles.pricingCard}>
+      <h3>🚚 Delivery</h3>
+      <p>Nationwide delivery</p>
+      <p>Fast & reliable logistics</p>
+    </div>
+  </div>
+
+  <p style={styles.pricingNote}>
+    📲 For bulk orders, wholesale pricing, or restaurant supply, please contact
+    us via WhatsApp.
+  </p>
+</section>
+
 
       {/* FINAL CTA */}
       <section style={styles.final}>

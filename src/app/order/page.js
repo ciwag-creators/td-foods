@@ -41,7 +41,7 @@ export default function Home() {
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(false);
 
-  const pricePerKg = 2000;
+  const pricePerKg = 500;
 
   const sendWhatsAppAlert = (reference) => {
     const message = `
