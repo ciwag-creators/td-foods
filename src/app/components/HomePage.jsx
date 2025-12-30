@@ -129,40 +129,41 @@ Thank you.`;
           <div style={styles.card}>✔ Nationwide Delivery</div>
         </div>
       </section>
-<section style={styles.pricing}>
-  <h2>Pricing & Supply Capacity</h2>
 
-  <p style={styles.pricingText}>
+      {/* PRICING SECTION */}
+<section style={styles.pricing}>
+  <h2 style={styles.pricingTitle}>Pricing & Supply Capacity</h2>
+
+  <p style={styles.pricingIntro}>
     We supply <strong>premium dry crayfish</strong> suitable for homes,
-    restaurants, caterers, and bulk buyers.
+    restaurants, caterers, and bulk buyers across Nigeria.
   </p>
 
   <div style={styles.pricingGrid}>
     <div style={styles.pricingCard}>
-      <h3>💰 Price Range</h3>
-      <p>₦3,500 per kg (retail)</p>
-      <p>Discounts available for bulk orders</p>
+      <h3>💰 Price</h3>
+      <p><strong>₦2,000 per kg</strong></p>
+      <p>Bulk discounts available</p>
     </div>
 
     <div style={styles.pricingCard}>
-      <h3>📦 Supply Capacity</h3>
-      <p>Minimum order: 1 kg</p>
-      <p>Maximum supply: 500 kg+</p>
-      <p>Daily & bulk supply available</p>
+      <h3>📦 Quantity</h3>
+      <p>From <strong>1 kg</strong></p>
+      <p>Up to <strong>500 kg+</strong></p>
     </div>
 
     <div style={styles.pricingCard}>
       <h3>🚚 Delivery</h3>
-      <p>Nationwide delivery</p>
-      <p>Fast & reliable logistics</p>
+      <p>Nationwide coverage</p>
+      <p>Fast & reliable</p>
     </div>
   </div>
 
   <p style={styles.pricingNote}>
-    📲 For bulk orders, wholesale pricing, or restaurant supply, please contact
-    us via WhatsApp.
+    📲 Bulk buyers & restaurants should contact us via WhatsApp.
   </p>
 </section>
+
 
 
       {/* FINAL CTA */}
@@ -176,16 +177,17 @@ Thank you.`;
       </section>
 
       {/* FLOATING WHATSAPP */}
-      <a
-        href={`https://wa.me/2347066922332?text=${encodeURIComponent(
-          whatsappMessage
-        )}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={styles.whatsappFloat}
-      >
-        💬
-      </a>
+    <a
+  href={`https://wa.me/2347066922332?text=${encodeURIComponent(
+    "Hello TD Foods 👋 I want to place an order for dry crayfish 🦐"
+  )}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  style={styles.whatsappFloat}
+>
+  💬
+</a>
+
     </main>
   );
 }
@@ -226,16 +228,22 @@ const styles = {
   },
 
   imageRow: {
-    display: "flex",
-    gap: 20,
-    flexWrap: "wrap",
-    justifyContent: "center",
-  },
+  display: "flex",
+  gap: 24,
+  justifyContent: "center",
+  alignItems: "center",
+  flexWrap: "wrap",
+  marginTop: 30,
+},
 
-  heroImage: {
-    borderRadius: 16,
-    objectFit: "cover",
-  },
+heroImage: {
+  borderRadius: 20,
+  objectFit: "cover",
+  width: "100%",
+  maxWidth: 480,
+  height: 320,
+},
+
 
   cta: {
     padding: "14px 28px",
@@ -294,20 +302,66 @@ const styles = {
   },
 
   whatsappFloat: {
-    position: "fixed",
-    bottom: 20,
-    right: 20,
-    width: 56,
-    height: 56,
-    backgroundColor: "#25D366",
-    color: "#fff",
-    borderRadius: "50%",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: "26px",
-    textDecoration: "none",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
-    zIndex: 1000,
-  },
+  position: "fixed",
+  bottom: 20,
+  right: 20,
+  width: 60,
+  height: 60,
+  backgroundColor: "#25D366",
+  color: "#fff",
+  borderRadius: "50%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  fontSize: 28,
+  textDecoration: "none",
+  boxShadow: "0 6px 18px rgba(0,0,0,0.3)",
+  zIndex: 1000,
+},
+
+pricing: {
+  padding: "70px 16px",
+  backgroundColor: "#fff",
+},
+
+pricingTitle: {
+  textAlign: "center",
+  fontSize: "2.2rem",
+  marginBottom: 14,
+},
+
+pricingIntro: {
+  textAlign: "center",
+  maxWidth: 700,
+  margin: "0 auto 40px",
+  fontSize: "1.1rem",
+  color: "#555",
+  lineHeight: 1.6,
+},
+
+pricingGrid: {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+  gap: 20,
+  maxWidth: 1000,
+  margin: "0 auto",
+},
+
+pricingCard: {
+  background: "#f9f9f9",
+  padding: 28,
+  borderRadius: 14,
+  textAlign: "center",
+  fontSize: "1.05rem",
+  boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
+},
+
+pricingNote: {
+  marginTop: 40,
+  textAlign: "center",
+  fontWeight: "bold",
+  color: "#008080",
+  fontSize: "1rem",
+},
+
 };
