@@ -1,47 +1,121 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+export const metadata = {
+  title: "TD Foods | Premium Dry Crayfish in Nigeria",
+  description:
+    "Buy premium dry crayfish from TD Foods. Clean, hygienically packaged, no sand, no odor. Fast delivery across Nigeria. Order online or via WhatsApp.",
+
+  keywords: [
+    "dry crayfish Nigeria",
+    "buy crayfish online",
+    "premium crayfish",
+    "crayfish supplier",
+    "TD Foods crayfish",
+    "seafood Nigeria",
+  ],
+
+  authors: [{ name: "TD Foods" }],
+  creator: "TD Foods",
+
+  openGraph: {
+    title: "TD Foods | Premium Dry Crayfish 🦐",
+    description:
+      "Fresh, clean and hygienically packaged dry crayfish. Trusted by homes and restaurants nationwide.",
+    url: "https://td-foods.vercel.app", // change to your real domain
+    siteName: "TD Foods",
+    images: [
+      {
+        url: "/images/crayfish.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Premium dry crayfish from TD Foods",
+      },
+    ],
+    locale: "en_NG",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "TD Foods | Premium Dry Crayfish",
+    description:
+      "Order premium dry crayfish online. Clean, fresh, and trusted nationwide.",
+    images: ["/images/crayfish.jpg"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
+};
+
 
 export default function HomePage() {
+  const whatsappMessage = `Hello TD Foods 👋
+
+I want to place an order for dry crayfish 🦐
+
+Please share price and delivery details.
+
+Thank you.`;
+
   return (
     <main style={styles.wrapper}>
-      
       {/* HERO SECTION */}
       <section style={styles.hero}>
         <div style={styles.heroText}>
           <h1 style={styles.title}>TD-Foods Dry Crayfish 🦐</h1>
+
           <p style={styles.subtitle}>
             Premium Quality • Ready to Eat • Deliciously Clean
           </p>
+
           <p style={styles.subtitle}>
-           Our product is  Fresh, clean and hygienically Packaged
+            Fresh, clean and hygienically packaged
           </p>
 
-          <Link href="/order">
-            <button style={styles.cta}>Order Now</button>
-          </Link>
+          <div style={{ display: "flex", gap: 12 }}>
+            <Link href="/order">
+              <button style={styles.cta}>Order Now</button>
+            </Link>
+
+            <a
+              href={`https://wa.me/2347066922332?text=${encodeURIComponent(
+                whatsappMessage
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button style={styles.whatsappBtn}>WhatsApp</button>
+            </a>
+          </div>
         </div>
 
-       <div style={styles.imageRow}>
-  <Image
-    src="/images/crayfish.jpg"
-    alt="Premium crayfish"
-    width={480}
-    height={420}
-    style={styles.heroImage}
-    priority
-  />
+        {/* IMAGES ROW */}
+        <div style={styles.imageRow}>
+          <Image
+            src="/images/crayfish.jpg"
+            alt="Premium crayfish"
+            width={300}
+            height={220}
+            style={styles.heroImage}
+            priority
+          />
 
-  <Image
-    src="/images/crayfish-bg.jpg"
-    alt="Packaged crayfish"
-    width={400}
-    height={320}
-    style={styles.heroImage}
-  />
-</div>
-
-
+          <Image
+            src="/images/crayfish-bg.jpg"
+            alt="Packaged crayfish"
+            width={300}
+            height={220}
+            style={styles.heroImage}
+          />
+        </div>
       </section>
 
       {/* INFO SECTION */}
@@ -56,7 +130,6 @@ export default function HomePage() {
         </div>
       </section>
 
-
       {/* FINAL CTA */}
       <section style={styles.final}>
         <h2>Ready to Place an Order?</h2>
@@ -67,9 +140,22 @@ export default function HomePage() {
         </Link>
       </section>
 
+      {/* FLOATING WHATSAPP */}
+      <a
+        href={`https://wa.me/2347066922332?text=${encodeURIComponent(
+          whatsappMessage
+        )}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={styles.whatsappFloat}
+      >
+        💬
+      </a>
     </main>
   );
 }
+
+/* ================= STYLES ================= */
 
 const styles = {
   wrapper: {
@@ -77,44 +163,59 @@ const styles = {
     color: "#222",
   },
 
- hero: {
-  display: "flex",
-  gap: 60,
-  alignItems: "center",
-  justifyContent: "space-between",
-  padding: "60px 20px",
-  maxWidth: 1100,
-  margin: "0 auto",
-  flexWrap: "wrap",
-},
+  hero: {
+    display: "flex",
+    gap: 60,
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: "60px 20px",
+    maxWidth: 1100,
+    margin: "0 auto",
+    flexWrap: "wrap",
+  },
 
+  heroText: {
+    maxWidth: 500,
+  },
 
- heroText: {
-  maxWidth: 500,
-},
+  title: {
+    fontSize: "3rem",
+    marginBottom: 10,
+    lineHeight: 1.2,
+  },
 
-title: {
-  fontSize: "3rem",
-  marginBottom: 10,
-  lineHeight: 1.2,
-},
+  subtitle: {
+    fontSize: "1.15rem",
+    marginBottom: 12,
+    color: "#555",
+  },
 
-subtitle: {
-  fontSize: "1.15rem",
-  marginBottom: 24,
-  color: "#555",
-},
-
+  imageRow: {
+    display: "flex",
+    gap: 20,
+    flexWrap: "wrap",
+    justifyContent: "center",
+  },
 
   heroImage: {
-    borderRadius: 20,
-    marginTop: 26,
+    borderRadius: 16,
+    objectFit: "cover",
   },
 
   cta: {
     padding: "14px 28px",
     fontSize: "1rem",
     backgroundColor: "#0aa",
+    color: "#fff",
+    border: "none",
+    borderRadius: 6,
+    cursor: "pointer",
+  },
+
+  whatsappBtn: {
+    padding: "14px 22px",
+    fontSize: "1rem",
+    backgroundColor: "#25D366",
     color: "#fff",
     border: "none",
     borderRadius: 6,
@@ -142,17 +243,6 @@ subtitle: {
     fontWeight: "bold",
   },
 
-  imageBreak: {
-    maxWidth: 1100,
-    margin: "60px auto",
-    padding: "0 20px",
-  },
-
-  fullImage: {
-    width: "100%",
-    borderRadius: 12,
-  },
-
   final: {
     textAlign: "center",
     padding: "60px 20px",
@@ -168,19 +258,21 @@ subtitle: {
     cursor: "pointer",
   },
 
-imageRow: {
-  display: "flex",
-  gap: 20,
-  flexWrap: "wrap",
-  justifyContent: "center",
-},
-
-heroImage: {
-  borderRadius: 16,
-  objectFit: "cover",
-  width: 300,
-  height: 220,
-},
-
-
+  whatsappFloat: {
+    position: "fixed",
+    bottom: 20,
+    right: 20,
+    width: 56,
+    height: 56,
+    backgroundColor: "#25D366",
+    color: "#fff",
+    borderRadius: "50%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "26px",
+    textDecoration: "none",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+    zIndex: 1000,
+  },
 };
